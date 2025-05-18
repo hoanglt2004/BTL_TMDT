@@ -12,6 +12,7 @@ import entity.Category;
 import entity.Invoice;
 import entity.Product;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,6 +30,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 
 
@@ -65,7 +68,13 @@ public class XuatExcelControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"hoa-don-"+ngayXuat+"-"+Integer.toString(randomNum)+".xlsx");
+        // Tạo thư mục nếu chưa tồn tại
+File directory = new File("C:\\Users\\ADMIN\\Documents\\ExcelWebBanSua");
+if (!directory.exists()) {
+    directory.mkdirs();
+}
+
+FileOutputStream file=new FileOutputStream("C:\\Users\\ADMIN\\Documents\\ExcelWebBanSua\\"+"hoa-don-"+ngayXuat+"-"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;

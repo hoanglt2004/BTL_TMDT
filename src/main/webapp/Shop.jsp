@@ -155,7 +155,7 @@ input[type="radio"]:checked + .sort-label {
                         
                         if (txtSearch.length > 0) {
                             $.ajax({
-                                url: "/WebsiteBanGiay/searchAjaxShop",
+                                url: "/WebsiteBanSua/searchAjaxShop",
                                 type: "get",
                                 data: {
                                     txt: txtSearch
@@ -200,7 +200,7 @@ input[type="radio"]:checked + .sort-label {
 
                 function loadAllProducts() {
                     $.ajax({
-                        url: "/WebsiteBanGiay/loadAllProducts",
+                        url: "/WebsiteBanSua/loadAllProducts",
                         type: "get",
                         success: function (data) {
                             var row = document.getElementById("content");
@@ -216,7 +216,7 @@ input[type="radio"]:checked + .sort-label {
                     currentSearchText = '';
                     
                     $.ajax({
-                        url: "/WebsiteBanGiay/categoryShop",
+                        url: "/WebsiteBanSua/categoryShop",
                         type: "get",
                         data: {
                             cid: cateid
@@ -301,11 +301,11 @@ input[type="radio"]:checked + .sort-label {
                     loadAllProducts();
                     return;
                 } else if(type === 'az') {
-                    url = '/WebsiteBanGiay/sortByNameAZ';
+                    url = '/WebsiteBanSua/sortByNameAZ';
                 } else if(type === 'za') {
-                    url = '/WebsiteBanGiay/sortByNameZA';
+                    url = '/WebsiteBanSua/sortByNameZA';
                 } else if(type === 'new') {
-                    url = '/WebsiteBanGiay/sortByNewest';
+                    url = '/WebsiteBanSua/sortByNewest';
                 }
                 $.ajax({
                     url: url,
@@ -415,7 +415,7 @@ input[type="radio"]:checked + .sort-label {
     function load(cateid){
         window.currentCategoryId = cateid;
         $.ajax({
-            url: "/WebsiteBanGiay/categoryShop",
+            url: "/WebsiteBanSua/categoryShop",
             type: "get",
             data: {
                 cid: cateid
@@ -429,7 +429,7 @@ input[type="radio"]:checked + .sort-label {
         var numMin = document.getElementById("priceMin").value;
         var numMax = document.getElementById("priceMax").value;
         $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxPriceMinToMax",
+            url: "/WebsiteBanSua/searchAjaxPriceMinToMax",
             type: "get", //send it through get method
             data: {
                 priceMin: numMin,
@@ -448,7 +448,7 @@ input[type="radio"]:checked + .sort-label {
         var searchText = document.getElementById('searchInput').value;
         var cid = window.currentCategoryId;
         $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxPriceAsc",
+            url: "/WebsiteBanSua/searchAjaxPriceAsc",
             type: "get",
             data: {
                 txt: searchText,
@@ -464,7 +464,7 @@ input[type="radio"]:checked + .sort-label {
         var searchText = document.getElementById('searchInput').value;
         var cid = window.currentCategoryId;
         $.ajax({
-            url: "/WebsiteBanGiay/searchAjaxPriceDesc",
+            url: "/WebsiteBanSua/searchAjaxPriceDesc",
             type: "get",
             data: {
                 txt: searchText,
@@ -478,7 +478,7 @@ input[type="radio"]:checked + .sort-label {
     }
     function loadAmountCart(){
     	 $.ajax({
-             url: "/WebsiteBanGiay/loadAllAmountCart",
+             url: "/WebsiteBanSua/loadAllAmountCart",
              type: "get", //send it through get method
              data: {
                  

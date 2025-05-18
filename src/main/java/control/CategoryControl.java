@@ -45,7 +45,7 @@ public class CategoryControl extends HttpServlet {
         			+ "                                    <img class=\"card-img-top\" src=\""+o.getImage()+"\" alt=\"Card image cap\">\r\n"
         			+ "                                    <div class=\"card-body\">\r\n"
         			+ "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pid="+o.getId()+"\" title=\"View Product\">"+o.getName()+"</a></h4>\r\n"
-        			+ "                                        <p class=\"card-text show_txt\">"+o.getTitle()+"</p>\r\n"
+        			+ "                                        <p class=\"card-text show_txt\">"+o.getBrand()+"</p>\r\n"
         			+ "                                        <div class=\"row\">\r\n"
         			+ "                                            <div class=\"col\">\r\n"
         			+ "                                                <p class=\"btn btn-danger btn-block\">"+o.getPrice()+" $</p>\r\n"

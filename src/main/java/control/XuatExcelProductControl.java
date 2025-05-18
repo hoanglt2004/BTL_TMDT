@@ -12,6 +12,7 @@ import entity.Category;
 import entity.Invoice;
 import entity.Product;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,6 +30,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 
 
@@ -66,7 +69,13 @@ public class XuatExcelProductControl extends HttpServlet {
         int randomNum =  rn.nextInt(range) + minimum;
 
         
-        FileOutputStream file=new FileOutputStream("C:\\ExcelWebBanGiay\\"+"san-pham"+Integer.toString(randomNum)+".xlsx");
+        // Tạo thư mục nếu chưa tồn tại
+File directory = new File("C:\\Users\\ADMIN\\Documents\\ExcelWebBanSua");
+if (!directory.exists()) {
+    directory.mkdirs();
+}
+
+FileOutputStream file=new FileOutputStream("C:\\Users\\ADMIN\\Documents\\ExcelWebBanSua\\"+"san-pham"+Integer.toString(randomNum)+".xlsx");
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet workSheet=workbook.createSheet("1");
         XSSFRow row;
@@ -93,21 +102,15 @@ public class XuatExcelProductControl extends HttpServlet {
         cell3=row.createCell(3);
         cell3.setCellValue("Price");
         cell4=row.createCell(4);
-        cell4.setCellValue("Title");
+        cell4.setCellValue("Brand");
         cell5=row.createCell(5);
         cell5.setCellValue("Description");
         cell5=row.createCell(6);
-        cell5.setCellValue("Model");
+        cell5.setCellValue("CateID");
         cell5=row.createCell(7);
-        cell5.setCellValue("Color");
+        cell5.setCellValue("Image2");
         cell5=row.createCell(8);
-        cell5.setCellValue("Delivery");
-        cell5=row.createCell(9);
-        cell5.setCellValue("Image");
-        cell5=row.createCell(10);
-        cell5.setCellValue("Image");
-        cell5=row.createCell(11);
-        cell5.setCellValue("Image");
+        cell5.setCellValue("Image3");
         
         int i=0;
         
@@ -123,21 +126,15 @@ public class XuatExcelProductControl extends HttpServlet {
         		     cell3=row.createCell(3);
         		     cell3.setCellValue(pro.getPrice());	
         		     cell4=row.createCell(4);
-        		     cell4.setCellValue(pro.getTitle());	
+        		     cell4.setCellValue(pro.getBrand());	
         		     cell4=row.createCell(5);
         		     cell4.setCellValue(pro.getDescription());	
         		     cell4=row.createCell(6);
-        		     cell4.setCellValue(pro.getModel());	
+        		     cell4.setCellValue(pro.getCateID());	
         		     cell4=row.createCell(7);
-        		     cell4.setCellValue(pro.getColor());	
-        		     cell4=row.createCell(8);
-        		     cell4.setCellValue(pro.getDelivery());	
-        		     cell4=row.createCell(9);
         		     cell4.setCellValue(pro.getImage2());	
-        		     cell4=row.createCell(10);
-        		     cell4.setCellValue(pro.getImage3());	
-        		     cell4=row.createCell(11);
-        		     cell4.setCellValue(pro.getImage4());	
+        		     cell4=row.createCell(8);
+        		     cell4.setCellValue(pro.getImage3());
         }
                
         workbook.write(file);

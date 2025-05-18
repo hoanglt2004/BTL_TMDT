@@ -48,8 +48,10 @@ public class EditControl extends HttpServlet {
         String ptitle = request.getParameter("title");
         String pdescription = request.getParameter("description");
         String pcategory = request.getParameter("category");
+        String pbrand = request.getParameter("brand");
+        String pcateID = request.getParameter("cateID");
         DAO dao = new DAO();
-        dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pmodel, pcolor, pdelivery, pimage2, pimage3, pimage4, pid);
+        dao.editProduct(pname, pimage, pprice, pbrand, pdescription, pcateID, pimage2, pimage3, pid);
        request.setAttribute("mess", "Edited!");
        request.getRequestDispatcher("manager").forward(request, response);
 //        response.sendRedirect("manager");

@@ -44,7 +44,7 @@ public class AddCartControl extends HttpServlet {
         Account a = (Account) session.getAttribute("acc");
         
         int amount = Integer.parseInt(request.getParameter("quantity"));
-        String size = request.getParameter("size");
+        // size field removed as per new database structure
         
         DAO dao = new DAO();
         
@@ -52,10 +52,10 @@ public class AddCartControl extends HttpServlet {
             // Nếu đã đăng nhập, thêm vào database
             Cart cartExisted = dao.checkCartExist(a.getId(), productID);
             if (cartExisted != null) {
-                dao.editAmountAndSizeCart(a.getId(), productID, 
-                    cartExisted.getAmount() + amount, size);
+                dao.editAmountCart(a.getId(), productID, 
+                    cartExisted.getAmount() + amount);
             } else {
-                dao.insertCart(a.getId(), productID, amount, size);
+                dao.insertCart(a.getId(), productID, amount);
             }
         } else {
             // Nếu chưa đăng nhập, thêm vào session
@@ -77,7 +77,7 @@ public class AddCartControl extends HttpServlet {
                 Cart cart = new Cart();
                 cart.setProductID(productID);
                 cart.setAmount(amount);
-                cart.setSize(size);
+                // size setter removed as per new database structure
                 cartList.add(cart);
             }
             

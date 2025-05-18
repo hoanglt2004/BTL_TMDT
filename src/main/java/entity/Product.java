@@ -14,38 +14,31 @@ public class Product {
     private String name;
     private String image;
     private double price;
-    private String title;
+    private String brand; // đổi từ title sang brand theo cấu trúc db mới
     private String description;
-    private String model;
-    private String color;
-    private String delivery;
+    private int cateID; // thêm cateID
     private String image2;
     private String image3;
-    private String image4;
-	public Product(int id, String name, String image, double price, String title, String description, String model,
-			String color, String delivery, String image2, String image3, String image4) {
+	public Product(int id, String name, String image, double price, String brand, String description, int cateID,
+			String image2, String image3) {
 		
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.price = price;
-		this.title = title;
+		this.brand = brand;
 		this.description = description;
-		this.model = model;
-		this.color = color;
-		this.delivery = delivery;
+		this.cateID = cateID;
 		this.image2 = image2;
 		this.image3 = image3;
-		this.image4 = image4;
 	}
 	public Product() {
 		
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title
-				+ ", description=" + description + ", model=" + model + ", color=" + color + ", delivery=" + delivery
-				+ ", image2=" + image2 + ", image3=" + image3 + ", image4=" + image4 + "]";
+		return "Product [id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", brand=" + brand
+				+ ", description=" + description + ", cateID=" + cateID + ", image2=" + image2 + ", image3=" + image3 + "]";
 	}
 	public int getId() {
 		return id;
@@ -71,11 +64,11 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getTitle() {
-		return title;
+	public String getBrand() {
+		return brand;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 	public String getDescription() {
 		return description;
@@ -83,23 +76,11 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getModel() {
-		return model;
+	public int getCateID() {
+		return cateID;
 	}
-	public void setModel(String model) {
-		this.model = model;
-	}
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
-	public String getDelivery() {
-		return delivery;
-	}
-	public void setDelivery(String delivery) {
-		this.delivery = delivery;
+	public void setCateID(int cateID) {
+		this.cateID = cateID;
 	}
 	public String getImage2() {
 		return image2;
@@ -113,14 +94,5 @@ public class Product {
 	public void setImage3(String image3) {
 		this.image3 = image3;
 	}
-	public String getImage4() {
-		return image4;
-	}
-	public void setImage4(String image4) {
-		this.image4 = image4;
-	}
-    
-	
-    
     
 }

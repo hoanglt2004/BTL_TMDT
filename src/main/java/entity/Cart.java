@@ -5,14 +5,13 @@ public class Cart {
 	 private int productID;
 	 private int amount;
 	 private int maCart;
-	 private String size;
-	public Cart(int accountID, int productID, int amount, int maCart, String size) {
+	 // size field removed as per new database structure
+	public Cart(int accountID, int productID, int amount, int maCart) {
 	
 		this.accountID = accountID;
 		this.productID = productID;
 		this.amount = amount;
 		this.maCart = maCart;
-		this.size = size;
 	}
 	public Cart() {
 		
@@ -41,16 +40,10 @@ public class Cart {
 	public void setMaCart(int maCart) {
 		this.maCart = maCart;
 	}
-	public String getSize() {
-		return size;
-	}
-	public void setSize(String size) {
-		this.size = size;
-	}
+	// Size getters and setters removed as per new database structure
 	@Override
 	public String toString() {
-		return "Cart [accountID=" + accountID + ", productID=" + productID + ", amount=" + amount + ", maCart=" + maCart
-				+ ", size=" + size + "]";
+		return "Cart [accountID=" + accountID + ", productID=" + productID + ", amount=" + amount + ", maCart=" + maCart + "]";
 	} 
 	 
 	

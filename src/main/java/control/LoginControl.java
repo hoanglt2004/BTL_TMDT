@@ -92,11 +92,11 @@ public class LoginControl extends HttpServlet {
                      Cart existingCart = dao.checkCartExist(a.getId(), cart.getProductID());
                      if (existingCart != null) {
                          // Nếu sản phẩm đã tồn tại trong giỏ hàng của user, cập nhật số lượng
-                         dao.editAmountAndSizeCart(a.getId(), cart.getProductID(), 
-                             existingCart.getAmount() + cart.getAmount(), cart.getSize());
+                         dao.editAmountCart(a.getId(), cart.getProductID(), 
+                             existingCart.getAmount() + cart.getAmount());
                      } else {
                          // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
-                         dao.insertCart(a.getId(), cart.getProductID(), cart.getAmount(), cart.getSize());
+                         dao.insertCart(a.getId(), cart.getProductID(), cart.getAmount());
                      }
                  }
                  // Xóa giỏ hàng trong session

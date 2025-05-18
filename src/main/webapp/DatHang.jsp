@@ -153,7 +153,7 @@
         <script>
             window.addEventListener("load", function loadAmountCart() {
                 $.ajax({
-                    url: "/WebsiteBanGiay/loadAllAmountCart",
+                    url: "/WebsiteBanSua/loadAllAmountCart",
                     type: "get",
                     success: function(responseData) {
                         document.getElementById("amountCart").innerHTML = responseData;

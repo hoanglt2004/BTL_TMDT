@@ -117,7 +117,7 @@
         <script>
                         function loadTotalMoney(){
                         	 $.ajax({
-                                 url: "/WebsiteBanGiay/totalMoneyCart",
+                                 url: "/WebsiteBanSua/totalMoneyCart",
                                  type: "get",
                                  success: function (responseData) {
                                      document.getElementById("contentTotalMoney").innerHTML = responseData;

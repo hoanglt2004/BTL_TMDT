@@ -212,7 +212,7 @@
     });
     function loadAmountCart(){
    	 $.ajax({
-            url: "/WebsiteBanGiay/loadAllAmountCart",
+            url: "/WebsiteBanSua/loadAllAmountCart",
             type: "get", //send it through get method
             data: {
                 
